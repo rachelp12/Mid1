@@ -18,4 +18,18 @@ class CarsTest extends TestCase
     {
         $this->assertTrue(true);
     }
+
+    /**
+     * Test insert a car
+     *
+     * @return void
+     */
+    public function testInsertCar()
+    {
+        $car = new Car();
+        $car -> Make = 'honda';
+        $car -> Model = 'civic';
+        $car -> Year = '1999';
+        $this->assertTrue($car -> save());
+    }
 }
