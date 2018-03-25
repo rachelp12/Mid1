@@ -28,9 +28,23 @@ class UsersTest extends TestCase
     {
         $user = new User();
         $user -> name = 'Ruiqi';
-        $user -> email = 'rs858@njit.edu';
+        $user -> email = 'rs858'.rand(1,999999).'@njit.edu';
         $user -> password = 'password';
 
         $this->assertTrue($user -> save());
+    }
+
+
+    /**
+     * Test update user name
+     *
+     * @return void
+     */
+    public function testUpdateUserName()
+    {
+        $user = User::find(1);
+        $user -> name = 'Steve Smith';
+        $this->assertTrue($user -> save());
+        $this->assertTrue($user -> name == 'Steve Smith');
     }
 }
