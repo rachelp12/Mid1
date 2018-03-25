@@ -18,4 +18,19 @@ class UsersTest extends TestCase
     {
         $this->assertTrue(true);
     }
+
+    /**
+     * Test insert user
+     *
+     * @return void
+     */
+    public function testInsertUser()
+    {
+        $user = new User();
+        $user -> name = 'Ruiqi';
+        $user -> email = 'rs858@njit.edu';
+        $user -> password = 'password';
+
+        $this->assertTrue($user -> save());
+    }
 }
