@@ -100,5 +100,16 @@ class CarsTest extends TestCase
 
     }
 
+    /**
+     * Test car model is a string
+     *
+     * @return void
+     */
+    public function testCarModelIsString()
+    {
+        $car = Car::find(1);
+        $this->assertINternalType('string', $car -> Model);
+    }
+
 
 }
