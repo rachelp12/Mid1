@@ -75,4 +75,17 @@ class CarsTest extends TestCase
         $this->assertEquals($carCount, 50);
     }
 
+    /**
+     * Test car year is integer
+     *
+     * @return void
+     */
+    public function testCarYearIsInteger()
+    {
+        $car = Car::find(1);
+        // https://phpunit.readthedocs.io/en/latest/assertions.html#assertstringmatchesformat
+        $this->assertStringMatchesFormat('%d', $car -> Year);
+    }
+
+
 }
