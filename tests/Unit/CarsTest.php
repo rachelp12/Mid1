@@ -46,4 +46,19 @@ class CarsTest extends TestCase
         $this->assertTrue($car -> Year == 2000);
     }
 
+    /**
+     * Test delete car
+     *
+     * @return void
+     */
+    public function testDeleteCar()
+    {
+        $car = new Car();
+        $car -> Make = 'honda';
+        $car -> Model = 'civic';
+        $car -> Year = '1999';
+        $car -> save();
+        $this->assertTrue($car -> delete());
+    }
+
 }
