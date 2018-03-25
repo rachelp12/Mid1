@@ -55,4 +55,16 @@ class ExampleTest extends TestCase
         $response->assertStatus(200);
     }
 
+    /**
+     * Test contact page returns 200 ok
+     *
+     * @return void
+     */
+    public function testContactPage()
+    {
+        $response = $this->get('/contact');
+
+        $response->assertStatus(200);
+    }
+
 }
