@@ -31,5 +31,17 @@ class ExampleTest extends TestCase
         $response->assertStatus(200);
     }
 
+    /**
+     * Test login page returns 200 ok
+     *
+     * @return void
+     */
+    public function testLoginPage()
+    {
+        $response = $this->get('/login');
+
+        $response->assertStatus(200);
+    }
+
 
 }
