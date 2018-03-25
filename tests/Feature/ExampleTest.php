@@ -43,5 +43,16 @@ class ExampleTest extends TestCase
         $response->assertStatus(200);
     }
 
+    /**
+     * Test about page returns 200 ok
+     *
+     * @return void
+     */
+    public function testAboutPage()
+    {
+        $response = $this->get('/about');
+
+        $response->assertStatus(200);
+    }
 
 }
