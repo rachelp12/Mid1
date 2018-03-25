@@ -87,5 +87,18 @@ class CarsTest extends TestCase
         $this->assertStringMatchesFormat('%d', $car -> Year);
     }
 
+    /**
+     * Test car make is either ford/honda/toyota
+     *
+     * @return void
+     */
+    public function testCarMakeValid()
+    {
+        $car = Car::find(1);
+        $make = $car -> Make;
+        $this->assertTrue($make == 'ford' || $make == 'honda' || $make == 'toyota');
+
+    }
+
 
 }
