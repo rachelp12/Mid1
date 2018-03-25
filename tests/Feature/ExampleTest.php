@@ -18,4 +18,18 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    /**
+     * Test register page returns 200 ok
+     *
+     * @return void
+     */
+    public function testRegisterPage()
+    {
+        $response = $this->get('/register');
+
+        $response->assertStatus(200);
+    }
+
+
 }
