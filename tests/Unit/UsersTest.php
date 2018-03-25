@@ -62,4 +62,20 @@ class UsersTest extends TestCase
         $user -> save();
         $this->assertTrue($user -> delete());
     }
+
+    /**
+     * Test seed user count
+     * Note: for previous tests I create test for adding updating and deleting user so
+     * the total number will not be 50 any more. As a result, when couting, we need to 
+     * filter out those users that are not created by seeding.
+     * @return void
+     */
+    public function testSeedUserCount()
+    {
+        // filter out my previous test data which uses password 'password'
+        $user = User::where('password', '!=', 'password');
+        $userCount = $user -> count();
+        echo $userCount;
+        $this->assertEquals($userCount, 50);
+    }
 }
