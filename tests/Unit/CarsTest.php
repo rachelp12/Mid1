@@ -61,4 +61,18 @@ class CarsTest extends TestCase
         $this->assertTrue($car -> delete());
     }
 
+    /**
+     * Test seed car count
+     * Note: Since we can not tell the difference between seed car data and test car data created
+     * above. I use the create time to filter out not seed data. 
+     * @return void
+     */
+    public function testSeedCarCount()
+    {
+        // filter out data created after I create the seed data
+        $car = Car::where('created_at', '<', '2018-03-25 15:59:59');
+        $carCount = $car -> count();
+        $this->assertEquals($carCount, 50);
+    }
+
 }
